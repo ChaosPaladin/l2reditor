@@ -69,6 +69,7 @@
     <Compile Include="ASM\DefaultASMFile.cs" />
     <Compile Include="ASM\interlude\musicinfo.cs" />
     <Compile Include="ASM\types\ASCF.cs" />
+    <Compile Include="ASM\types\ASCF2.cs" />
     <Compile Include="ASM\types\BYTE.cs" />
     <Compile Include="ASM\types\UINT.cs" />
     <Compile Include="ASM\types\UNICODE.cs" />

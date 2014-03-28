@@ -2,7 +2,6 @@
 	public class ASMData {
 		public DefaultASMType type { get; private set; }
 		public string[] data { get; set; }
-		public bool meta { get; set; }
 
 		public ASMData(DefaultASMType type) {
 			this.type = type;
