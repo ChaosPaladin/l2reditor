@@ -64,13 +64,15 @@
   <ItemGroup>
     <Compile Include="ASM\ASMData.cs" />
     <Compile Include="ASM\ASMVersion.cs" />
+    <Compile Include="ASM\clients\Interlude.cs" />
     <Compile Include="ASM\DefaultASMHeader.cs" />
     <Compile Include="ASM\DefaultASMType.cs" />
     <Compile Include="ASM\DefaultASMFile.cs" />
-    <Compile Include="ASM\interlude\musicinfo.cs" />
-    <Compile Include="ASM\types\ASCF.cs" />
-    <Compile Include="ASM\types\ASCF2.cs" />
+    <Compile Include="ASM\types\ASCFNonType.cs" />
+    <Compile Include="ASM\types\ASCFWithType.cs" />
+    <Compile Include="ASM\types\AutoASCF.cs" />
     <Compile Include="ASM\types\BYTE.cs" />
+    <Compile Include="ASM\types\INT.cs" />
     <Compile Include="ASM\types\UINT.cs" />
     <Compile Include="ASM\types\UNICODE.cs" />
     <Compile Include="Crypt\Crypt.cs" />

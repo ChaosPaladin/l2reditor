@@ -5,6 +5,9 @@ using System.Text;
 
 namespace L2REditor.Engine.ASM.types {
 	public class BYTE : DefaultASMType {
+		public BYTE(string name, bool isArray) : base(name, isArray) {
+		}
+
 		public override ASMData readData(BinaryReader reader) {
 			throw new NotImplementedException();
 		}

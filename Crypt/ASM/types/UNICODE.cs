@@ -4,6 +4,9 @@ using System.Text;
 
 namespace L2REditor.Engine.ASM.types {
 	public class UNICODE : DefaultASMType {
+		public UNICODE(string name, bool isArray) : base(name, isArray) {
+		}
+
 		public override ASMData readData(BinaryReader reader) {
 			var dao = new ASMData(this);
 			if (isArray) {

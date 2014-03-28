@@ -2,8 +2,8 @@
 using System.IO;
 
 namespace L2REditor.Engine.ASM.types {
-	public class UINT : DefaultASMType {
-		public UINT(string name, bool isArray) : base(name, isArray) {
+	public class INT : DefaultASMType {
+		public INT(string name, bool isArray) : base(name, isArray) {
 		}
 
 		public override ASMData readData(BinaryReader reader) {
@@ -12,9 +12,8 @@ namespace L2REditor.Engine.ASM.types {
 				uint count = reader.ReadUInt32();
 				dao.data = new string[count];
 				for (int i = 0; i < count; i++)
-					dao.data[i] = reader.ReadUInt32().ToString();
-			} else
-				dao.data = new[] { reader.ReadUInt32().ToString() };
+					dao.data[i] = reader.ReadInt32().ToString();
+			} else dao.data = new[] { reader.ReadInt32().ToString() };
 			return dao;
 		}
 
@@ -22,10 +21,9 @@ namespace L2REditor.Engine.ASM.types {
 			if (isArray) {
 				writer.Write(Convert.ToUInt32(dao.data.Length));
 				for(int i = 0; i < dao.data.Length; i++)
-					writer.Write(uint.Parse(dao.data[i]));
+					writer.Write(int.Parse(dao.data[i]));
 			} else {
-				var d = uint.Parse(dao.data[0]);
-				writer.Write(d);
+				writer.Write(int.Parse(dao.data[0]));
 			}
 			return true;
 		}

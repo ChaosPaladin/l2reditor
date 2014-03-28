@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace L2REditor.Engine.ASM {
 	public class DefaultASMFile {
@@ -8,12 +9,11 @@ namespace L2REditor.Engine.ASM {
 		};
 
 		public readonly IList<ASMData[]> values = new List<ASMData[]>(); //data
-		public DefaultASMHeader header { get; protected set; }
 		protected DefaultASMType[] types { get; set; }
-		private readonly string openFile;
+		protected int header { get; set; }
 
-		public DefaultASMFile(string fname) {
-			openFile = fname;
+		public DefaultASMFile() {
+			
 		}
 
 		public bool deserialize(BinaryReader reader) {
@@ -35,15 +35,11 @@ namespace L2REditor.Engine.ASM {
 			return true;
 		}
 
-		public bool serialize() {
-			return serialize(openFile);
-		}
-
 		public bool serialize(string file) {
 			if(File.Exists(file)) File.Delete(file);
 
 			using (var fs = new BinaryWriter(File.Create(file))) {
-				fs.Write(header.value); //write file header
+				fs.Write(header); //write file header
 
 				foreach (var value in values) {
 					for (int i = 0; i < value.Length; i++) {

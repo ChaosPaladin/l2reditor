@@ -3,7 +3,10 @@ using System.IO;
 using System.Text;
 
 namespace L2REditor.Engine.ASM.types {
-	public class ASCF2 : DefaultASMType {
+	public class ASCFWithType : DefaultASMType {
+		public ASCFWithType(string name, bool isArray) : base(name, isArray) {
+		}
+
 		public override ASMData readData(BinaryReader reader) {
 			var dao = new ASMData(this);
 			if (isArray) {
